@@ -32,7 +32,7 @@ public class Libro implements Costeable, Catalogable {
 					
 	}
 
-	//Getters && Setters-----------------------------------------------------------------------------------------------
+	//Getters && Setters------------------------------------------------------------------------------------------------
 	
 	public String getTitulo() {
 		return titulo;
@@ -67,7 +67,7 @@ public class Libro implements Costeable, Catalogable {
 	}
 
 	
-	//MÉTODOS-------------------------------------------------------------------------------------------------------------
+	//MÉTODOS--------------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
 		return "Libro [titulo=" + titulo + ", autor=" + autor + ", anioPublicacion=" + anioPublicacion + ", precioBase="

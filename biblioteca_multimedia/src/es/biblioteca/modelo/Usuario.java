@@ -2,10 +2,14 @@ package es.biblioteca.modelo;
 
 import java.util.Objects;
 
+
 public class Usuario {
+	
+	//Atributos
 	private String nombre, email;
 	private int id, edad;
 	
+	//Constructores
 	public Usuario() {
 		
 	}
@@ -17,6 +21,8 @@ public class Usuario {
 		this.edad = edad;
 	}
 
+	
+	//Getters & Setters---------------------------------------------------------------------------------------------------
 	public String getNombre() {
 		return nombre;
 	}
@@ -49,6 +55,8 @@ public class Usuario {
 		this.edad = edad;
 	}
 
+	//MÉTODOS------------------------------------------------------------------------------------------------------------------- 
+	
 	@Override
 	public String toString() {
 		return "Usuario [nombre=" + nombre + ", email=" + email + ", id=" + id + ", edad=" + edad + "]";
