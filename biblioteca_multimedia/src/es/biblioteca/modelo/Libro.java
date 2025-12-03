@@ -3,7 +3,11 @@ package es.biblioteca.modelo;
 import java.util.HashSet;
 import java.util.Objects;
 
-public class Libro {
+import es.biblioteca.interfaces.Catalogable;
+import es.biblioteca.interfaces.Costeable;
+
+
+public class Libro implements Costeable, Catalogable {
 
 	//Atributos
 	private String titulo, autor;
@@ -76,7 +80,7 @@ public class Libro {
 		if (!(obj instanceof Libro)) return false; //Aquí se comprueba si no son de la misma clase
 		
 		Libro otroLibro = (Libro) obj; // Se crea una variable de tipo Libro, y le asignamos la conversión de la referencia obj a tipo Libro 
-		return (this.titulo.equals(otroLibro.getTitulo()))&&(this.autor.equals(otroLibro.getAutor()));
+		return (this.getTitulo().equals(otroLibro.getTitulo()))&&(this.getAutor().equals(otroLibro.getAutor()));
 	}
 	
 	@Override
@@ -84,4 +88,13 @@ public class Libro {
 		return Objects.hash(titulo, autor);
 	}
 	
+	
+	@Override
+	public double getPrecioFinal() {
+		return getPrecioBase();
+	}
+	@Override
+	public String getDescripcionCatalogo() {
+		return "Descripción";
+	}
 }
