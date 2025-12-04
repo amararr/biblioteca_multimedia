@@ -7,12 +7,11 @@ import es.biblioteca.interfaces.Catalogable;
 import es.biblioteca.interfaces.Costeable;
 
 
-public class Libro implements Costeable, Catalogable {
+public class Libro extends Material implements Costeable, Catalogable {
 
 	//Atributos
-	private String titulo, autor;
-	private int anioPublicacion;
-	private double precioBase;
+	private String autor;
+	
 	
 	//Constructores 
 	public Libro() {
@@ -34,14 +33,6 @@ public class Libro implements Costeable, Catalogable {
 
 	//Getters && Setters------------------------------------------------------------------------------------------------
 	
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
 	public String getAutor() {
 		return autor;
 	}
@@ -50,23 +41,7 @@ public class Libro implements Costeable, Catalogable {
 		this.autor = autor;
 	}
 
-	public int getAnioPublicacion() {
-		return anioPublicacion;
-	}
-
-	public void setAnioPublicacion(int anioPublicacion) {
-		this.anioPublicacion = anioPublicacion;
-	}
-
-	public double getPrecioBase() {
-		return precioBase;
-	}
-
-	public void setPrecioBase(double precioBase) {
-		this.precioBase = precioBase;
-	}
-
-	
+		
 	//MÉTODOS--------------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
@@ -97,4 +72,13 @@ public class Libro implements Costeable, Catalogable {
 	public String getDescripcionCatalogo() {
 		return "Descripción";
 	}
+	
+	@Override
+	public double costeAdquisicion() {
+		return precioFinal()*PRECIOPROVEEDOR;
+	}
+	
+	
+	
+	
 }
